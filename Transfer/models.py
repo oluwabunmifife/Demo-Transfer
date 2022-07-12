@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import User
+from idna import valid_contextj
 # Create your models here.
 
 class Client(models.Model):
@@ -10,3 +11,6 @@ class Client(models.Model):
 
     def __str__(self):
         return self.F_name, self.L_name
+
+class Account(models.Model):
+    valid_user = models.ForeignKey()
