@@ -1,16 +1,15 @@
 from django.db import models
-from django.contrib.auth import User
-from idna import valid_contextj
+from django.contrib.auth.models import AbstractUser
+
 # Create your models here.
 
-class Client(models.Model):
-    F_name = models.CharField(max_length=35)
-    L_name = models.CharField(max_length=35)
-    Acc_Num = models.IntegerField(models.OneToOneField("Account.Model", on_delete=models.CASCADE))
-    pin = models.IntegerField()
+class Client(AbstractUser):
+    # valid_user = models.ForeignKey("Client", on_delete=models.CASCADE)
+    Acc_Num = models.CharField("Account Number", max_length=10)
+    pin = models.CharField(max_length=4)
 
-    def __str__(self):
-        return self.F_name, self.L_name
+    # def __str__(self):
+    #     return self.F_name, self.L_name
 
-class Account(models.Model):
-    valid_user = models.ForeignKey()
+# class Account(models.Model):
+# )

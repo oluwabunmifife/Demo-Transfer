@@ -1,0 +1,66 @@
+{% if request.user.is_authenticated %}
+
+<p> 
+    <a href="#">Home</a>
+    <a href="#">Settings</a>
+    <a href="#">Transfer</a>
+    <a href="#">Notification</a>
+    <a href="logout">Logout</a>
+
+</p>
+
+{% else %}
+
+<p>
+    <a href="#">
+        Login
+    </a>
+    <a href="#">
+        Signup
+    </a>
+</p>
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+{% comment %} 
+
+{% if request.user.is_authenticated %}
+
+<p>
+    <a style="text-decoration: none; color: black;", href="{% url 'register:logout' %}">
+        <button>Logout</button>
+    </a>
+    <a style="text-decoration: none; color: black;", href="{% url 'trans:account' %}">
+        <button>Home</button>
+    </a>
+    <a style="text-decoration: none; color: black", href="{% url 'trans:transfer-view' %}">
+        <button>Transfer</button>
+    </a>
+    <a style="text-decoration: none; color: black", href="{% url 'trans:transfer-notify' %}">
+        <button>Notification</button>
+    </a>
+</p>
+
+
+{% else %}
+
+<p>
+    <a href="{% url 'register:login' %}">
+        Login
+    </a>
+    <a href="{% url 'register:signup' %}">
+        Signup
+    </a>
+</p>
+
+{% endif %}
+
+<hr> {% endcomment %}

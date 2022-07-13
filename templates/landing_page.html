@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+        Welcome Back {{ request.user.username }}
+
+    {% else %}
+        This is the landing page. Proceed to SignUp 😊
+        {% comment %} <a href="home.html">signup</a> {% endcomment %}
+
+    {% endif %}
+
+{% endblock %}
