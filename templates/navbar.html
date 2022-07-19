@@ -5,17 +5,17 @@
     <a href="#">Settings</a>
     <a href="#">Transfer</a>
     <a href="#">Notification</a>
-    <a href="logout">Logout</a>
+    <a href="{% url 'transfer:Logout' %}">Logout</a>
 
 </p>
 
 {% else %}
 
 <p>
-    <a href="#">
+    <a href="{% url 'transfer:Login' %}">
         Login
     </a>
-    <a href="#">
+    <a href="{% url 'transfer:Register' %}">
         Signup
     </a>
 </p>
