@@ -19,6 +19,9 @@ from django.core.mail import send_mail
 def homeview(request):
     return render(request, "landing_page.html", {})
 
+def dashboard(request):
+    return render(request, "dashboard.html", {})
+    
 
 
 def registerview(request):
@@ -35,11 +38,6 @@ def registerview(request):
     else:
         return render(request, "Transfer/register.html", {"form": form})
 
-            
-
-    #IGNORE ALL THIS!!!
-    #
-
 
 def login_view(request):
     form = LoginForm
@@ -50,13 +48,10 @@ def login_view(request):
     # if form.is_valid():
     #     username = form.cleaned_data['username']
     #     pin = form.cleaned_data['pin']
-
-
         user = authenticate(username=username, pin=pin)
-
         if user is not None:
             login(request, user)
-            return redirect('transfer:Home')
+            return redirect('transfer:Dashboard')
         else:
             messages.info(request, 'Invalid username/pin')
             return redirect('transfer:Login')
@@ -85,6 +80,6 @@ def genAcc(first_name, last_name, username, email, pin, request):
         # recipient_list = [new_client.email, ]
         # send_mail( subject, message, email_from, recipient_list )
 
-        return redirect("transfer:Home")
+        return redirect("transfer:Dashboard")
 
 
