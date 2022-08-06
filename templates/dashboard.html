@@ -2,7 +2,10 @@
 
 {% block content %}
 
-    <h2>Welcome Back {{ request.user.username }}</h2>
+    {% if user.is_authenticated %}
+        <h1>Welcome Back {{ user.username }} !</h1>
+    {% endif %}
+    
 
 
     

@@ -2,7 +2,11 @@
 
 {% block content %}
 <h1>LOGIN YOU❤!!!</h1> <br>
+{% for message in messages %}
+    <h4 style="color: red;">{{message}}</h4>
+{% endfor %}
 <form method="POST">
+    
     {% csrf_token %}
     {{form.as_p}} 
     <br>
