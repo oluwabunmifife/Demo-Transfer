@@ -1,0 +1,5 @@
+CHECK OUT DJANGO DEFAULT USER MODEL (AbstractBaseblah)
+
+SuperUser: 
+Admin
+Admin1234
