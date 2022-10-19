@@ -24,5 +24,7 @@ class Client(AbstractUser):
     Acc_Num = models.CharField("Account Number", max_length=10)
     slug = models.SlugField(max_length=250)
 
+
+   
     def __str__(self):
         return self.username

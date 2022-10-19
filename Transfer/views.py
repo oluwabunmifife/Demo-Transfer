@@ -47,7 +47,7 @@ def registerview(request):
             return redirect("transfer:Register")
 
         else:
-            user = Client.objects.create(first_name=first_name, last_name=last_name, email=email, username=username, password=password, Acc_Num=Acc_Num)
+            user = Client.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password, Acc_Num=Acc_Num)
             user.save()
         return redirect("transfer:Login")
     else:
@@ -93,7 +93,7 @@ class ClientLoginView(LoginView):
 
 
 def profile(request, slug):
-    user = Client.objects.get(slug=slug)
+    user = Client.objects.filter(slug=slug)
     return render(request, "profile.html", {"user": user})
 
 def logout_view(request):
